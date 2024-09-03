@@ -1,5 +1,7 @@
+import Filters from '@/components/Filters'
 import SearchForm from '@/components/SearchForm'
 import React from 'react'
+
 
 const page = () => {
   return (
@@ -31,13 +33,14 @@ const page = () => {
         text-white
         text-balance
         font-bold
-        text-xl'
+        text-3xl'
         >
             JavaScript & TypeScript  Mastery Resources
         </h1>
     </div>
     <SearchForm/>
     </section>   
+    <Filters/>
     </main>
   )
 }
