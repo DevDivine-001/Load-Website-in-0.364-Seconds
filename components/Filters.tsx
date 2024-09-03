@@ -9,7 +9,6 @@ const [active, setActive ] = useState("")
 const handleFilter = (link: string) =>{
     setActive(link)
 } 
-
 // console.log({active})
 
   return (
@@ -30,7 +29,7 @@ const handleFilter = (link: string) =>{
                 <button
                 key={link}
                 onClick={() => handleFilter (link)}
-                className={` ${active === link ? 'gradient_bluye-purple':""}
+                className={` ${active === link ? 'gradient_blue-purple':""}
                 whitespace-nowrap
                 rounded-lg 
                 px-8
