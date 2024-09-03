@@ -31,7 +31,7 @@ const Navbar = () => {
             !font-bold
 
                 '>
-            <Link href="https://jsmastery.pro/next13"
+            <Link href="https://www.jsmastery.pro/ultimate-next-course"
                     target='_blank'>
                         Next.js 13.4 Course
             </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
             body-text
             !font-normal
                 '>
-            <Link href="https://jsmastery.pro/masterclass"
+            <Link href="https://www.jsmastery.pro/dev-career-accelerator"
                     target='_blank'>
                         Masterclass
             </Link>

@@ -1,4 +1,4 @@
-import resource from './resource.schema';
+import resource from './resource.schemas';
 import resourcePlaylist from './resource-playlist.schema';
 
 const schemas = [resource, resourcePlaylist]
