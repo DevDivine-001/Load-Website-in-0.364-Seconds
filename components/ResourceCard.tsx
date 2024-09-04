@@ -8,6 +8,7 @@ import {
   CardTitle
 } from "../components/ui/card"; // Update this to match the correct path
 import Link from 'next/link';
+import Image from 'next/image';
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface Props{
@@ -28,6 +29,16 @@ const ResourceCard = ({id, title, image, downloadNumber, slug }: Props) => {
      sm:max-w-[356px]'>
 <Link href={`/resource`}>
 <CardHeader>
+    <div>
+    <Image
+    src={image}
+    className='h-full rounded-md object-cover'
+    height={384}
+    width={440}
+    alt={title}
+    />
+
+    </div>
     <CardTitle>Card Title</CardTitle>
     <CardDescription>Card CardDescription</CardDescription>
 
