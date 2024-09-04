@@ -1,5 +1,3 @@
-
-
 interface BuildQueryParams {
     type: string,
     query: string,
@@ -33,3 +31,4 @@ export const buildQuery = (params: BuildQueryParams) => {
         return `${conditions[0]}[${offset}...${limit}]`
     }
 }
+
