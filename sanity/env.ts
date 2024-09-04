@@ -1,5 +1,6 @@
+
 export const apiVersion =
-  process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-09-03'
+  process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-09-13'
 
 export const dataset = assertValue(
   process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -11,10 +12,10 @@ export const projectId = assertValue(
   'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
 )
 
-// export const token = assertValue(
-//   process.env.NEXT_PUBLIC_SANITY_TOKEN, // Fixed capitalization
-//   'Missing environment variable: NEXT_PUBLIC_SANITY_TOKEN'
-// )
+export const token = assertValue(
+  process.env.NEXT_PUBLIC_SANITY_TOKEN,
+  'Missing environment variable: NEXT_PUBLIC_SANITY_TOKEN'
+)
 
 export const useCdn = false
 
