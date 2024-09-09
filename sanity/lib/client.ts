@@ -1,18 +1,18 @@
 import { createClient } from 'next-sanity'
 
-import { apiVersion, dataset, projectId, useCdn, token } from '../env'
+import { apiVersion, dataset, projectId, useCdn, token } from '../Schemas/env'
 
 export const readClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn,
+    projectId,
+    dataset,
+    apiVersion,
+    useCdn,
 
 })
 export const writeClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn,
-  token,
+    projectId,
+    dataset,
+    apiVersion,
+    useCdn,
+    token,
 })

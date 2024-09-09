@@ -4,7 +4,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <header className='fixed text-white flex-center w-full border-b-2 border-black-200 py-7 top-0 z-50'>
+    <header className='fixed text-white flex-center w-full border-b-2 border-black-200 py-7 top-0 z-50  bg-black-100'>
         <nav className='flex-between mx-auto w-full max-w-screen-2xl px-6 xs:px-8 sm:px-16'>
             <Link href="">
             <Image src="/jsm-logo.svg"

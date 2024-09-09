@@ -1,28 +1,45 @@
-import Filters from '@/components/Filters'
-import ResourceCard from '@/components/ResourceCard'
-import SearchForm from '@/components/SearchForm'
-import { getResources } from '@/sanity/actions'
+
+import Filters from '@/components/ui/Filters'
+import Header from '@/components/ui/Header'
+import ResourceCard from '@/components/ui/ResourceCard'
+import SearchForm from '@/components/ui/SearchForm'
+import { getResources, getResourcesPlaylist } from '@/sanity/Schemas/actions'
 import React from 'react'
 
+export const revalidate = 100
 
-const page = async () => {
+interface IProps {
+  searchParams: {[ key: string] : string | undefined }
+}
+
+
+const page = async ({ 
+  searchParams
+
+}: IProps) => {
   const resources = await getResources({
-    query: "",
-    category: "",
+    query: searchParams?.query || "",
+    category: searchParams?.category ||
+     "",
     page:"1" 
   })
-  console.log(resources)
+  // console.log(resources)
+
+  const resourcesPlaylist = await getResourcesPlaylist()
+  // console.log(resourcesPlaylist)
   return (
-    <main className='rrr
+    <main className='
     flex-center 
     paddings 
     mx-auto
     w-full
     max-w-screen-2xl
-    flex-col'>
+    flex-col
+   '>
    <section className='
    nav-padding 
-   w-full'>
+   w-full
+   '>
     <div className='
     flex-center
     relative
@@ -41,7 +58,9 @@ const page = async () => {
         text-white
         text-balance
         font-bold
-        text-3xl'
+        text-3xl
+        '
+        
         >
             JavaScript & TypeScript  Mastery Resources
         </h1>
@@ -49,9 +68,14 @@ const page = async () => {
     <SearchForm/>
     </section>   
     <Filters/>
-    <section className='flex-center mt-6 w-full flex-col sm:mt-20'>
-      Header
-      <div className='mt-12 flex w-full flex-warp justify-center gap-16 sm:mt-20'>
+    {(searchParams?.query || searchParams?.category) && (
+          <section className='flex-center  w-full flex-col sm:mt-20 '>
+     < Header
+     title={"Resources"}
+     query={searchParams?.query || ''}
+     category={searchParams?.category || ""}
+     />
+      <div className='flex w-full flex-wrap mt-7 gap-12 sm:justify-start'>
 {resources?.length >0 ? (
           
           resources.map((resources:any) => (
@@ -61,7 +85,8 @@ const page = async () => {
             id={resources._id}
             image={resources.image}
             downloadNumber={resources.views}
-            slug={resources._id}
+          downLoadLink={resources.downloadLink}
+           
             />
           ))
         
@@ -74,6 +99,42 @@ const page = async () => {
 
       </div>
     </section>
+    )}
+    { resourcesPlaylist.map((item: any) =>(
+      <section key={item._id} className='
+      flex-center mt-6 w-full flex-col sm:mt-20'>
+        <h1
+        className='heading3 self-start
+        text-white-800'>{item.title}</h1>
+        <div
+        className='mt-12 
+        flex 
+        w-full
+        flex-wrap
+        justify-center
+        gap-16
+        sm:justify-start
+        '>
+          {
+            item.resources.map((resources:any)=>(
+                 <ResourceCard
+            key={resources._id}
+            title={resources.title}
+            id={resources._id}
+            image={resources.image}
+            downloadNumber={resources.views}
+            downLoadLink={resources.downloadLink}
+           
+            />
+
+            ))
+          }
+          
+        </div>
+
+      </section>
+    ))}
+
     </main>
   )
 }
