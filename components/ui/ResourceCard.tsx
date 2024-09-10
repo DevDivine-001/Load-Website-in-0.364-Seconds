@@ -32,6 +32,7 @@ const ResourceCard = ({ id,title, image, downloadNumber, downLoadLink }: Props) 
 <Link href={downLoadLink}
 target='_blank'
 >
+  ssss
 <CardHeader className='
      flex-center
      flex-col
