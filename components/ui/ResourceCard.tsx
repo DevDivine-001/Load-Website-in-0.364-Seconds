@@ -11,14 +11,14 @@ import Image from 'next/image';
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface Props{
-    id: number,
+    id: string,
     title: string
     image?: string,
     downloadNumber?: number
     downLoadLink: string
 }
 
-const ResourceCard = ({ title, image, downloadNumber, downLoadLink }: Props) => {
+const ResourceCard = ({ id,title, image, downloadNumber, downLoadLink }: Props) => {
   return (
     <Card className='
      w-full
