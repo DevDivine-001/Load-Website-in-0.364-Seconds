@@ -6,7 +6,7 @@ import SearchForm from '@/components/ui/SearchForm'
 import { getResources, getResourcesPlaylist } from '@/sanity/Schemas/actions'
 import React from 'react'
 
-export const revalidate = 100
+export const revalidate = 10000
 
 interface IProps {
   searchParams: {[ key: string] : string | undefined }
@@ -71,7 +71,7 @@ const page = async ({
     {(searchParams?.query || searchParams?.category) && (
           <section className='flex-center  w-full flex-col sm:mt-20 '>
      < Header
-     title={"Resources"}
+     
      query={searchParams?.query || ''}
      category={searchParams?.category || ""}
      />
