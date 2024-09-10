@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import {useEffect, useState} from "react"
 import { usePathname, useSearchParams, useRouter } from "next/navigation"
-import { formUrlQuery } from "@/sanity/Schemas/utils"
+import { formUrlQuery } from "@/sanity/utils"
 
 
 

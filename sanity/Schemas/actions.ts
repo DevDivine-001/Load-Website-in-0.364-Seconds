@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 import { readClient } from '../lib/client';
-import { buildQuery } from './utils';
+import { buildQuery } from '../utils';
 
 interface GetResourcesParams {
     query: string;

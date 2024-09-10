@@ -1,6 +1,6 @@
 "use client"
 
-import { formUrlQuery } from '@/sanity/Schemas/utils';
+import { formUrlQuery } from '@/sanity/utils';
 import { useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
