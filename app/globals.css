@@ -184,7 +184,6 @@
 }
 
 @media screen and (max-width: 500px) {
-
   .sm-box-5,
   .sm-box-6,
   .sm-box-7,
@@ -236,8 +235,6 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

@@ -1,9 +1,8 @@
-import Filters from '@/components/ui/Filters'
-import Header from '@/components/ui/Header'
-import ResourceCard from '@/components/ui/ResourceCard'
-import SearchForm from '@/components/ui/SearchForm'
-import { getResources, getResourcesPlaylist } from '@/sanity/Schemas/actions'
-import React from 'react'
+import Filters from '@/components/Filters'
+import Header from '@/components/Header';
+import ResourceCard from '@/components/ResourceCard'
+import SearchForm from '@/components/SearchForm'
+import {getResources, getResourcesPlaylist } from '@/sanity/actions'
 
 export const revalidate = 100
 
@@ -61,7 +60,7 @@ const page = async ({ searchParams }: IProps) => {
                   id={resource._id}
                   image={resource.image}
                   downloadNumber={resource.views}
-                  downLoadLink={resource.downloadLink}
+                    downloadLink={resource.downloadLink}
                 />
               ))
             ) : (
@@ -81,7 +80,7 @@ const page = async ({ searchParams }: IProps) => {
                 id={resource._id}
                 image={resource.image}
                 downloadNumber={resource.views}
-                downLoadLink={resource.downloadLink}
+                  downloadLink={resource.downloadLink}
               />
             ))}
           </div>

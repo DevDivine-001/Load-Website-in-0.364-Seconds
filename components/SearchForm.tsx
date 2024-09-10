@@ -1,11 +1,11 @@
-'use client'
-import Image from "next/image"
+"use client"
+
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import Image from 'next/image'
+
 import { Input } from "@/components/ui/input"
-import {useEffect, useState} from "react"
-import { usePathname, useSearchParams, useRouter } from "next/navigation"
-import { formUrlQuery } from "@/sanity/utils"
-
-
+import { formUrlQuery } from '@/sanity/utils';
 
 const SearchForm = () => {
 

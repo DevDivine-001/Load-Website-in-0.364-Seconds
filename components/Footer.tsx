@@ -1,22 +1,16 @@
 import Link from 'next/link'
-import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className=' text-white flex-center w-full border-t border-black-200 py-7 bottom-0 '>
-        <nav className='flex-between mx-auto w-full max-w-screen-2xl px-6 xs:px-8 sm:px-16 max-md:flex-col max-md:gap-3'>
-             <p className='max-md:text-center'>Copyright ©️ 2024 TS Mastery Pro | All Rights Reserved</p>
-          
-   <div className='flex gap-x-9'>
-          <Link href="/terms-of-use">Terms & Conditions</Link> 
-          <Link href="/privacy-policy">Privacy Policy</Link> 
-       </div>
+    <footer className="text-white-800 flex-between body-text w-full gap-y-10 border-t border-black-400 bg-black-100 px-20 py-12 max-md:flex-col">
+      <p>Copyright © 2023 JS Mastery Pro | All Rights Reserved</p>
 
-        </nav>
-      
+      <div className="flex gap-x-9">
+        <Link href="/terms-of-use">Terms & Conditions</Link>
+        <Link href="/privacy-policy">Privacy Policy</Link>
+      </div>
     </footer>
   )
 }
 
 export default Footer
-
