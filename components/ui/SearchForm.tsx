@@ -37,7 +37,7 @@ const SearchForm = () => {
     }, 100)
 
     return () => clearTimeout(delayDebounceFn)
-  }, [search])
+  }, [search,pathname,searchParams])
 
   return (
     <form className="
